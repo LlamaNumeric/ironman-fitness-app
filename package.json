@@ -2,7 +2,10 @@
   "name": "ironman-fitness-app",
   "private": true,
   "type": "module",
+  "homepage": "https://llamanumeric.github.io/ironman-fitness-app/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
@@ -22,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
+    "gh-pages": "^6.3.0",
     "react-router-devtools": "^1.1.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
