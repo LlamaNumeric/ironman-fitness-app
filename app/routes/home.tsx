@@ -1,13 +1,22 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import React from "react";
+import type { Route } from "../+types/root";
+import { Outlet } from "react-router";
+import BottomNavBar from "~/components/bottomNavBar";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+	return [
+		{ title: "Ironman" },
+		{ name: "description", content: "Welcome to React Router!" },
+	];
 }
 
 export default function Home() {
-  return <Welcome />;
+	return (
+		<div className='h-screen flex flex-col justify-stretch'>
+			<div className='grow overflow-y-auto'>
+				<Outlet />
+			</div>
+			<BottomNavBar />
+		</div>
+	);
 }
